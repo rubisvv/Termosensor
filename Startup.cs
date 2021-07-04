@@ -29,7 +29,7 @@ namespace Termosensor
             string connection = Configuration.GetConnectionString("DefaultConnection");
             // добавляем контекст MobileContext в качестве сервиса в приложение
             services.AddDbContext<ApplicationContext>(options =>
-                options.UseSqlServer(connection));
+            options.UseSqlServer(connection));
 
             services.AddControllersWithViews();
         }

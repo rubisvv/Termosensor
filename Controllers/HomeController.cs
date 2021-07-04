@@ -15,6 +15,7 @@ namespace Termosensor.Controllers
         private readonly ILogger<HomeController> _logger;
 
         private ApplicationContext db;
+        
         public HomeController(ApplicationContext context)
         {
             db = context;
@@ -24,8 +25,10 @@ namespace Termosensor.Controllers
         {
             //IEnumerable<Phone> phones = phoneContext.Phones;
             //ViewBag.Phones = phones;
+           
             return View(await db.Temperatures.ToListAsync());
         }
+
         public IActionResult Create()
         {
             return View();
@@ -41,8 +44,9 @@ namespace Termosensor.Controllers
         [HttpPost]
         public async Task<IActionResult> AddTermorecord(Temperature termorecord, int Timezone, string TempValueStr)
         {
+            //Temperature Temp_termorecord;
             termorecord.Date = DateTime.UtcNow.AddHours(Timezone);
-            //termorecord.TempValue = float.Parse(TempValueStr);
+            termorecord.TempValue = termorecord.TempValue / 100; //float.Parse(TempValueStr) / 100;
             db.Temperatures.Add(termorecord);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Termosensor.Models.Temperature>
+﻿@model IEnumerable<Termosensor.Models.Temperature> 
 
 @{
     ViewData["Title"] = "Home Page";
@@ -21,17 +21,17 @@
             </tr>
         </thead>
         <tbody>
-            @{
-                foreach (var termorecord in Model) //ViewBag.Temperatures
-                {
-                <tr>
-                    <td>@termorecord.ID</td>
-                    <td>@termorecord.Date</td>
-                    <td>@termorecord.TempValue</td>
+          @{
+           foreach (var termorecord in Model) //ViewBag.Temperatures
+           {
+               <tr>
+                   <td>@termorecord.ID</td>
+                   <td>@termorecord.Date</td>
+                   <td>@termorecord.TempValue</td>
 
-                </tr>
-                }
-            }
+               </tr>
+           }
+       }
 
         </tbody>
     </table>
