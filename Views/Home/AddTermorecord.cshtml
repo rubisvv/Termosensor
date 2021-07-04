@@ -1,0 +1,18 @@
+﻿@model Termosensor.Models.Temperature
+@{
+    ViewBag.Title = "Добавление пользователя";
+}
+<form asp-action="AddTermorecord" asp-controller="home">
+    <input type="hidden" value="2" name="Timezone" />
+    <!--<div class="form-group">
+        <label asp-for="Date" class="control-label">Дата</label>
+        <input type="datetime" asp-for="Date" class="form-control" />
+    </div>-->
+    <div class="form-group">
+        <label asp-for="TempValue" class="control-label">Температура</label>
+        <input type="number" asp-for="TempValue" step="0.1" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Отправить" class="btn btn-default" />
+    </div>
+</form>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Termosensor.Models.Temperature> 
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+
+    <br />
+    <br />
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Дата</td>
+                <td>Температура</td>
+
+            </tr>
+        </thead>
+        <tbody>
+          @{
+           foreach (var termorecord in Model) //ViewBag.Temperatures
+           {
+               <tr>
+                   <td>@termorecord.ID</td>
+                   <td>@termorecord.Date</td>
+                   <td>@termorecord.TempValue</td>
+
+               </tr>
+           }
+       }
+
+        </tbody>
+    </table>
+
+</div>
+<br />
+<br />
+
+<div> <a asp-action="AddTermorecord">Добавить запись</a></div>
