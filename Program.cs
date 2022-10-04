@@ -24,4 +24,4 @@ namespace Termosensor
                 });
     }
 }
-//  Ver 1.2
+//  Ver 1.3
