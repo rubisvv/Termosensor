@@ -23,5 +23,6 @@ namespace Termosensor
                     webBuilder.UseStartup<Startup>();
                 });
     }
+// change for master branch 333
 }
 //  Ver 1.3
